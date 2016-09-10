@@ -15,14 +15,14 @@ logger = logging.getLogger(__name__)
 
 def start(bot, update):
     bot.sendMessage(chat_id=update.message.chat_id,
-                    text="I'm a bot, please talk to me!")
+                    text="Hello, would you like to play a game? I'm going to send you emojis and you tell me what movie title they refer to. Ok? If you ever need help, type /help!")
 
 def hello(bot, update):
     bot.sendMessage(chat_id=update.message.chat_id,
                     text='Hello {}'.format(update.message.from_user.first_name))
 
 def help(bot, update):
-    bot.sendMessage(update.message.chat_id, text='Help!')
+    bot.sendMessage(update.message.chat_id, text='To start a new game, type /start. To get help, type /help. To end the current round and start a new one, type /next.')
 
 def echo(bot, update):
     bot.sendMessage(chat_id=update.message.chat_id, text=update.message.text)
